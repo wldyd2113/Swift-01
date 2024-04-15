@@ -20,14 +20,26 @@ class BankAccount {
         get {
             return accountBlance - fees
         }
+        set(newBalance) {
+            accountBlance = newBalance - fees
+        }
     }
+    
+    // lazy는 반드시 값을 가지고 있어야해서 var에서만 사용가능, let에서 사용불가
+    lazy var myPorperty: String = {
+//        오래걸리는 작업
+//       var result = ressourceIntensiveTask()
+//        result = porcessData(data: result)
+//        return result
+        return ""
+    }()
    
-    /*
+    
     init() {
         accountBlance = 0
         accountNumber = 0
     }
-    */
+    
     
     //이니셜라이저
     init(number: Int, balance: Float) {
@@ -52,6 +64,8 @@ class BankAccount {
 }
 
 var bankAccount = BankAccount()
+
+bankAccount.balanceLessFees = 12123.12
 
 print(bankAccount.accountBlance)
 print(bankAccount.accountNumber)
