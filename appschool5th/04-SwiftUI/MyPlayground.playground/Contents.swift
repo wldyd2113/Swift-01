@@ -20,8 +20,8 @@ class BankAccount {
         get {
             return accountBlance - fees
         }
-        set(newBalance) {
-            accountBlance = newBalance - fees
+        set(accountBlance) {
+            self.accountBlance = accountBlance - fees
         }
     }
     
