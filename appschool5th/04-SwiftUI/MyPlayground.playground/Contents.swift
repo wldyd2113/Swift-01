@@ -70,3 +70,41 @@ bankAccount.balanceLessFees = 12123.12
 print(bankAccount.accountBlance)
 print(bankAccount.accountNumber)
 bankAccount.displayBlance()
+
+
+//상속
+class SavingsAccount: BankAccount {
+    var interestRate: Float = 0.0
+    
+    init(number: Int, balance: Float, rate: Float) {
+        interestRate = rate
+        super.init(number: number, balance: balance)
+    }
+    
+    func calculateInterest() -> Float {
+        return interestRate * accountBlance
+    }
+    
+    override func displayBlance() {
+        super.displayBlance()
+        print("Praviling interest reate is \(interestRate)")
+    }
+}
+
+print("--------------")
+var savingAccount = SavingsAccount(number: 12311, balance: 600.00, rate: 0.07)
+
+print(savingAccount.calculateInterest())
+savingAccount.displayBlance()
+
+extension Double {
+    var squared: Double {
+        return self * self
+    }
+    var cubed: Double {
+        return self * self * self
+    }
+}
+
+let myValue: Double = 3.0
+print(myValue.cubed)
