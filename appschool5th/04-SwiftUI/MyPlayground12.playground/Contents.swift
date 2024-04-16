@@ -38,3 +38,25 @@ myClass2.name = "Daivd"
 
 print(myClass1.name)
 print(myClass2.name)
+
+
+enum Temperature {
+    case hot
+    case warm
+    case cold(centigrade: Int)
+}
+
+func displayTemperature(temp: Temperature) {
+    switch temp {
+    case .hot :
+        print("It is hot")
+    case .warm:
+        print("It is warm")
+    case .cold(let centigrade) where centigrade <= 0:
+        print("Ice warning \(centigrade) degrees")
+    case .cold:
+        print("It is cold")
+    }
+}
+
+displayTemperature(temp: .cold(centigrade: -10))
