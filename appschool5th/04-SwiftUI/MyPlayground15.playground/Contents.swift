@@ -1,4 +1,5 @@
 
+//오류처리
 let connectionOK = true
 let connectionSpeed = 30.00
 let fileFound = false
